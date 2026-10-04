@@ -280,7 +280,7 @@ ul, ol, dl, dd { margin: 0; padding: 0; }
 .idx { font-size: .8rem; letter-spacing: .06em; color: var(--idx-ink); padding-top: .22em; flex: none; }
 
 /* ---------- 3. simulation ---------- */
-.sim { background: var(--bg-2); }
+.sim { background: var(--bg); }
 .sim-grid {
   display: grid; grid-template-columns: minmax(0, 1.75fr) minmax(0, 1fr); column-gap: clamp(2.5rem, 5vw, 5rem);
   grid-template-areas: "head head" "shot points" "note points"; grid-template-rows: auto auto 1fr; align-items: start;
@@ -298,7 +298,7 @@ ul, ol, dl, dd { margin: 0; padding: 0; }
 .points dd { display: inline; color: var(--muted); font-size: 1rem; line-height: 1.55; }
 
 /* ---------- 4. workflow ---------- */
-.workflow { background: radial-gradient(ellipse 70% 45% at 50% 0%, var(--glow), transparent 70%), var(--bg); }
+.workflow { background: radial-gradient(ellipse 70% 45% at 50% 0%, var(--glow), transparent 70%), var(--bg-2); }
 .wf-head { max-width: 64rem; }
 .diagram { margin: 0 0 clamp(4rem, 8vw, 6.5rem); }
 .wf-svg { width: 100%; height: auto; overflow: visible; }
@@ -318,7 +318,7 @@ ul, ol, dl, dd { margin: 0; padding: 0; }
 .d-head { fill: var(--edge); }
 .d-head-a { fill: var(--diag-accent); }
 .d-adv { fill: none; stroke: var(--diag-accent); stroke-width: 1.25; stroke-dasharray: 5 6; }
-.d-labelbg { fill: var(--bg); }
+.d-labelbg { fill: var(--bg-2); }
 .d-advlabel { font: 500 13.5px var(--f-mono); letter-spacing: .08em; fill: var(--diag-accent); }
 /* Review findings that fail return to the specialists: an ordinary edge, dashed. */
 .d-fix { stroke-dasharray: 5 6; }
@@ -332,7 +332,7 @@ ul, ol, dl, dd { margin: 0; padding: 0; }
 .steps::before { content: ''; position: absolute; left: 1.25rem; top: 1.25rem; bottom: 1.25rem; width: 1px; background: var(--line-strong); }
 .steps li { display: grid; grid-template-columns: 2.5rem minmax(0, 1fr); gap: 1.4rem; align-items: start; position: relative; }
 .step-num {
-  width: 2.5rem; height: 2.5rem; border-radius: 50%; display: grid; place-items: center; background: var(--bg);
+  width: 2.5rem; height: 2.5rem; border-radius: 50%; display: grid; place-items: center; background: var(--bg-2);
   border: 1px solid var(--line-strong); font: 500 .75rem/1 var(--f-mono); color: var(--step-ink); position: relative;
 }
 .step-title { font-family: var(--f-display); font-size: 1.65rem; line-height: 1.1; margin: .25rem 0 .45rem; }
@@ -352,7 +352,8 @@ ul, ol, dl, dd { margin: 0; padding: 0; }
 }
 
 /* ---------- 5. before / after ---------- */
-.ba { background: var(--bg); }
+/* Section tones alternate: why bg-2, gallery bg, iterations bg-2, sim bg, workflow bg-2, discipline bg, evidence bg-2. */
+.ba { background: var(--bg-2); }
 .ba-head { max-width: 50rem; }
 .ba-grid {
   display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: clamp(3rem, 6vw, 5rem) clamp(1.5rem, 3vw, 3rem);
@@ -432,7 +433,7 @@ ul, ol, dl, dd { margin: 0; padding: 0; }
 .data thead th { color: var(--text); }
 
 /* ---------- 7. discipline ---------- */
-.discipline { background: var(--bg-2); border-block: 1px solid var(--line); padding-block: clamp(4rem, 8vw, 6.5rem); }
+.discipline { background: var(--bg); border-block: 1px solid var(--line); padding-block: clamp(4rem, 8vw, 6.5rem); }
 .dc-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr); column-gap: clamp(3rem, 6vw, 6rem); align-items: end; }
 .dc-head .eyebrow { grid-column: 1 / -1; }
 .dc-head .h2 { margin-bottom: 0; }

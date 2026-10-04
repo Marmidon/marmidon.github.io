@@ -85,9 +85,18 @@
       index = (i + group.length) % group.length;
       var a = group[index], name = a.getAttribute('data-full');
       var thumb = a.querySelector('img');
-      sources[0].srcset = 'img/' + name + '-1920.avif';
-      sources[1].srcset = 'img/' + name + '-1920.webp';
-      img.src = 'img/' + name + '-1920.jpg';
+      var gif = a.getAttribute('data-gif');
+      if (gif) {
+        // A clip: the GIF at its native 1280, or its still under reduced motion.
+        var still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+        sources[0].srcset = still ? 'img/' + name + '-1280.avif' : '';
+        sources[1].srcset = still ? 'img/' + name + '-1280.webp' : '';
+        img.src = still ? 'img/' + name + '-1280.jpg' : gif;
+      } else {
+        sources[0].srcset = 'img/' + name + '-1920.avif';
+        sources[1].srcset = 'img/' + name + '-1920.webp';
+        img.src = 'img/' + name + '-1920.jpg';
+      }
       img.alt = thumb ? thumb.alt : '';
       cap.textContent = a.getAttribute('data-caption') || '';
       count.textContent = group.length > 1 ? (index + 1) + ' / ' + group.length : '';
