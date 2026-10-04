@@ -358,10 +358,12 @@ ul, ol, dl, dd { margin: 0; padding: 0; }
   display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: clamp(3rem, 6vw, 5rem) clamp(1.5rem, 3vw, 3rem);
   align-items: start;
 }
-.ba-warehouse { grid-column: 1 / 7; }
-.ba-lumber { grid-column: 8 / 13; margin-top: clamp(4rem, 12vw, 9rem); }
-.ba-mine { grid-column: 2 / 7; }
-.ba-gate { grid-column: 8 / 13; margin-top: clamp(-6rem, -4vw, -2rem); }
+.ba-town { grid-column: 1 / -1; }
+.ba-town .ba-pair:not(.is-slider) { grid-template-columns: minmax(0, 1fr); }
+/* The three close-up pairs share one row under the town. */
+.ba-warehouse { grid-column: 1 / 5; }
+.ba-lumber { grid-column: 5 / 9; }
+.ba-mine { grid-column: 9 / 13; }
 .ba-pair { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; }
 .ba-side { position: relative; overflow: hidden; border-radius: var(--radius); background: var(--surface); }
 .ba-side img { width: 100%; height: 100%; object-fit: cover; }
